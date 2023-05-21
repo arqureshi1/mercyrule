@@ -7,7 +7,7 @@ const app = express();
 app.use(controllers );
 
 //connect to database then run server
-sequelize.sync({}).then(() => {
+sequelize.sync({force: true}).then(() => {
     app.listen(Port, ()=> {
     console.log("dad will come back soon")
     })
