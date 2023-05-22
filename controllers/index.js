@@ -1,9 +1,10 @@
 const routes = require('express').Router();
-
-// localhost:3001/
-Router.get('/', (req, res) => {
-    res.json("HI!");
-})
+const users = require('./users');
+const pages = require('./pages')
+// localhost:3001/pages
+router.use('/', pages)
+// localhost:3001/users
+router.use("/users", users);
 
 
 module.exports = router;
