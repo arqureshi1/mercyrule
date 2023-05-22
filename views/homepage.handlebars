@@ -31,7 +31,13 @@
 
 <section class="container row">
     <ul>
-        <li class ="col-3"></li>
+        {{#each prettyUserData as |data|}}
+        <li class ="col-3">
+            <a href="http:/dashboard/{{data.id}}">
+            {{data.username}}
+            </a>
+            </li>
+        {{/each}}
     </ul>
 </section>
 

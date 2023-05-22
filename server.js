@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require("path");
 const controllers = requires('./routes');
 const sequelize = require('./config/connection');
 const exphbs = require ('express-handlebars');
@@ -6,7 +7,7 @@ const exphbs = require ('express-handlebars');
 const Port = process.env.Port || 3001;
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // all needed to use handlebars
 const hbs = exhbs.create({});

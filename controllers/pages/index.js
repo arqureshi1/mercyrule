@@ -4,13 +4,15 @@ const { User } = require("../../models");
 router.get('/', async (req, res)=> {
     const userData = await User.findall({
         attributes: [
+            'id',
             'username'
         ]
     });
     console.log("not good looking data", userData)
 
     constprettyUserData = userData.map((user) => user.get({plain: true}));
-    res.render('homepage');
+    console.log("user data is pretty", prettyUserData);
+    res.render('homepage', {prettyUserData});
 })
 
 
